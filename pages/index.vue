@@ -1,12 +1,15 @@
 <template>
   <section class="container">
-    <wt-Card 
-      v-for="(host, index) in caseList"
-      :key="index"
-      :hostUrl="host.hostUrl"
-      :hostName="host.hostName"
-      :hostLocation="host.hostLocation"
-      :imgUrl="host.imgUrl"/>
+    <div class="host-list row">
+      <wt-Card 
+        class="col-md-4"
+        v-for="(host, index) in caseList"
+        :key="index"
+        :hostUrl="host.hostUrl"
+        :hostName="host.hostName"
+        :hostLocation="host.hostLocation"
+        :imgUrl="host.imgUrl"/>    
+    </div>
   </section>
 </template>
 
@@ -19,7 +22,7 @@ export default {
       caseList: [
         {
           hostUrl: 'www.google.com',
-          imgUrl: 'https://images.pexels.com/photos/490411/pexels-photo-490411.jpeg?auto=compress&cs=tinysrgb&h=350',
+          imgUrl: 'https://img.freepik.com/free-photo/blue-mountains-famous-tourism-scenery-lijiang_1417-1143.jpg?size=338&ext=jpg',
           hostName: '旅居',
           hostLocation: '台北'
         },
@@ -57,15 +60,11 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  min-height: 100vh;
-  max-width: 900px;
-  min-width: 250vh;
+
+.host-list {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  text-align: center;
+  justify-content: center;
 }
 
 .title {

@@ -11,7 +11,17 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    css: [
+      '~/css/main.css'
+    ],
+    render: {
+      bundleRenderer: {
+        shouldPreload: (file, type) => {
+          return ['script', 'style', 'font'].includes(type)
+        }
+      }
+    }
   },
   /*
   ** Customize the progress bar color

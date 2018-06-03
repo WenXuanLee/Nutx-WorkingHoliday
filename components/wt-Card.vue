@@ -1,5 +1,5 @@
 <template>
-	<div class="portfolio-item">
+	<div class="display-item">
 	  <a :href="hostUrl" class="portfolio-link">
       <div class="portfolio-hover">
         <div class="portfolio-hover-content">
@@ -37,6 +37,9 @@ export default {
   box-shadow: @arguments;
 }
 
+.display-item {
+	
+}
 .portfolio-item {
   margin: 0 0 15px;
   right: 0;
