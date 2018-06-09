@@ -1,7 +1,17 @@
 <template>
+<div>
+  <wt-header>
+      <a slot="wt-icon" href="/?logo=1" class="wt-table-cell" aria-label="Working Holiday Home Page">
+        <div class="wt-icon-wrap">
+          <i class="fas fa-camera-retro" style="color: red"></i>
+        </div>
+      </a>
+      <wt-search-bar slot="wt-search"></wt-search-bar>
+  </wt-header>
   <section class="container">
+
     <div class="host-list row">
-      <wt-Card 
+      <wt-card 
         class="col-md-4"
         v-for="(host, index) in caseList"
         :key="index"
@@ -10,10 +20,14 @@
         :hostLocation="host.hostLocation"
         :imgUrl="host.imgUrl"/>    
     </div>
-  </section>
+  </section>  
+</div>
+
 </template>
 
 <script>
+import wtHeader from '@/components/wt-Header.vue'
+import wtSearchBar from '@/components/wt-SearchBar.vue'
 import wtCard from '@/components/wt-Card.vue'
 
 export default {
@@ -54,7 +68,9 @@ export default {
     }
   },
   components: {
-    wtCard
+    wtCard,
+    wtHeader,
+    wtSearchBar
   }
 }
 </script>
@@ -87,4 +103,5 @@ export default {
 .links {
   padding-top: 15px;
 }
+
 </style>

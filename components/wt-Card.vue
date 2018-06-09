@@ -115,7 +115,7 @@
 <script>
 
 export default {
-	props: ['hostUrl', 'hostName', 'hostLocation', 'imgUrl']
+	props: ['hostUrl', 'hostName', 'hostLocation', 'imgUrl', ]
 }	
 </script>
 

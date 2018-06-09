@@ -12,15 +12,18 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
-    css: [
-      '~/assets/main.css',
-      '~/assets/bootstrap.css'
-    ],
-    render: {
-      bundleRenderer: {
-        shouldPreload: (file, type) => {
-          return ['script', 'style', 'font'].includes(type)
-        }
+    script: [
+      { src: 'https://use.fontawesome.com/releases/v5.0.6/js/all.js' }
+    ]
+  },
+  css: [
+    '~/assets/main.css',
+    '~/assets/bootstrap-grid.css'
+  ],
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        return ['script', 'style', 'font'].includes(type)
       }
     }
   },
