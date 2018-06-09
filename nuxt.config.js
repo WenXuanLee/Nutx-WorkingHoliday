@@ -13,7 +13,8 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     css: [
-      '~/css/main.css'
+      '~/assets/main.css',
+      '~/assets/bootstrap.css'
     ],
     render: {
       bundleRenderer: {
