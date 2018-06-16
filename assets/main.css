@@ -1,19 +1,10 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.43;
-  color: #484848;
-  background-color: #fff;
+header {
+  font-weight: 600;
 }
 
 div {
   display: block;
 }
-
 
 .main-wrap {
   position: relative !important;
@@ -98,27 +89,27 @@ div {
 }
 .wt-vertical-nowidth {
   display: table-cell !important;
-  vertical-align: middle !important;  
+  vertical-align: middle !important;
 }
 
 .wt-vertical {
   display: table-cell !important;
   width: 100%;
-  vertical-align: middle !important;  
-}
-
-.wt-table {
-	display: table !important;
-	width: 100% !important;
-}
-
-.wt-block {
-	display: block !important;
-	width: 100% !important;
+  vertical-align: middle !important;
 }
 
 .wt-table-cell {
-	display: table-cell !important;	
+  display: table-cell !important;
+}
+
+.wt-table {
+  display: table !important;
+  width: 100% !important;
+}
+
+.wt-block {
+  display: block !important;
+  width: 100% !important;
 }
 
 .wt-vertical-center {
@@ -136,8 +127,12 @@ div {
   display: inline-block !important;
 }
 
-.wt-fixed { 
-	position: fixed;
+.wt-fixed {
+  position: fixed;
+}
+
+.wt-list-display-none {
+  list-style-type: none !important;
 }
 
 .wt-text-subtitle {

@@ -1,23 +1,23 @@
 <template>
-  <div class="section-header-block wt-fixed">
+  <div :class="['section-header-block', { 'wt-fixed': isFixed}]">
     <header role="banner" class="wt-relative">
-      <div class="section-header-wrap wt-fixed">
-          <div class="_2930ex">
-            <div class="wt-vertical-nowidth">
-              <slot name="wt-icon"></slot> 
-            </div>
-            <div class="wt-vertical">
-              <div class="header-search-wrap">
-                <div class="searchbar-wrap">
-                  <slot name="wt-search"></slot>
-                </div>
-              </div>           
-            </div>
-
-            <div class="wt-vertical-nowidth">
-              <slot name="wt-navlinks"></slot> 
-            </div>
+      <div :class="['section-header-wrap', { 'wt-fixed': isFixed, 'header-transparent': isTransparent }]">
+        <div class="wt-table">
+          <div class="wt-vertical-nowidth">
+            <slot name="wt-icon"></slot> 
           </div>
+          <div class="wt-vertical">
+            <div class="header-search-wrap">
+              <div class="searchbar-wrap">
+                <slot name="wt-search"></slot>
+              </div>
+            </div>           
+          </div>
+
+          <div class="wt-vertical-nowidth">
+            <slot name="wt-navlinks"></slot> 
+          </div>
+        </div>
       </div>
     </header>
   </div>
@@ -47,10 +47,10 @@ export default {
 }
 
 .section-header-wrap {
-    background-color: rgb(255, 255, 255) !important;
-    box-shadow: none !important;
-    width: 100% !important;
-    border-bottom: 1px solid rgb(228, 228, 228) !important;
+  background-color: rgb(255, 255, 255) !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  border-bottom: 1px solid rgb(228, 228, 228) !important;
 }
 
 .header-search-wrap {
@@ -60,6 +60,10 @@ export default {
   top: 10px !important;
   right: 12px !important;
   z-index: 100 !important;
+}
+
+.header-transparent {
+  background-color: transparent !important;
 }
 
 .searchbar-wrap {

@@ -7,20 +7,50 @@
         </div>
       </a>
       <wt-search-bar slot="wt-search"></wt-search-bar>
+      <wt-nav slot="wt-navlinks"></wt-nav>
   </wt-header>
-  <section class="container">
 
-    <div class="host-list row">
-      <wt-card 
-        class="col-md-4"
-        v-for="(host, index) in caseList"
-        :key="index"
-        :hostUrl="host.hostUrl"
-        :hostName="host.hostName"
-        :hostLocation="host.hostLocation"
-        :imgUrl="host.imgUrl"/>    
+  <main id="app" class="main-wrap">
+    <div>
+      <div class="main-content">
+        <div>
+          <div>fixed Button</div>
+          <div id="section-wrap">
+            <div id="section-cate">
+              <div>
+                <div class="section-block">
+                  <div class="section-title-block">
+                    <div class="wt-vertical-center">
+                      <div class="wt-mb">
+                        <h3 class="section-title">推薦的熱門換宿</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <span style="font-size: 0px;"></span>
+                  <div class="section-item">
+                    <wt-card 
+                      v-for="(host, index) in caseList"
+                      :key="index"
+                      :hostUrl="host.hostUrl"
+                      :hostName="host.hostName"
+                      :hostLocation="host.hostLocation"
+                      :imgUrl="host.imgUrl"/>
+                  </div>
+                  <div class="section-more">
+                    <button type="button" class="section-button" aria-busy="false">
+                      <span class="section-text">顯示全部 (超過2000個) </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>can't get what reason</div>
+        </div>
+
+      </div>
     </div>
-  </section>  
+  </main> 
 </div>
 
 </template>
@@ -29,6 +59,7 @@
 import wtHeader from '@/components/wt-Header.vue'
 import wtSearchBar from '@/components/wt-SearchBar.vue'
 import wtCard from '@/components/wt-Card.vue'
+import wtNav from '@/components/wt-Nav.vue'
 
 export default {
   data() {
@@ -70,38 +101,12 @@ export default {
   components: {
     wtCard,
     wtHeader,
-    wtSearchBar
+    wtSearchBar,
+    wtNav
   }
 }
 </script>
 
 <style scoped>
-
-.host-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 
 </style>

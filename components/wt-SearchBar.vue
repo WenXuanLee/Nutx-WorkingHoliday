@@ -19,8 +19,15 @@
 								    </div>
 								  </div>
 			            <div class="wt-relative wt-overflow-hidden">
-			              <input type="text" autocomplete="off" class="search-text" id="search" name="query"
-			                :placeholder="`試試「${ randomRecommand }」`" v-model="inputValue">
+			              <input 
+                      :placeholder="`試試「${ randomRecommand }」`" 
+                      v-model="inputValue"
+                      @keyup="searchResult"
+                      type="text" 
+                      autocomplete="off" 
+                      class="search-text" 
+                      id="search" 
+                      name="query">
 			            	<div class="search-delete-icon-wrap">
 											<div v-if="hasInput" class="search-inline-block">
 										    <button class="search-delete-button" type="button" @click.prevent="clearInput">
@@ -32,10 +39,13 @@
 										</div>
 			            </div>									
 								</div>
-
 				      </div>
 				    </div>	
 					</div>
+					<wt-search-bar-list-box 
+            v-if="hasInput" 
+            :list-item="fakeData"
+            :selected-input="inputValue"></wt-search-bar-list-box>
 		    </div>				
 			</div>
 		</form>
@@ -43,6 +53,7 @@
 </div>
 </template>
 <script>
+  import wtSearchBarListBox from '@/components/wt-SearchBarListBox.vue'
 	export default {
 		props: {
 	    fullWidth: {
@@ -50,11 +61,15 @@
 	      default: false
 	    } 
 	  },
+    components: {
+      wtSearchBarListBox
+    },
 	  data() {
 	  	return {
 	  		inputValue: '',
 	  		randomRecommand: 'Yooo' || '',
-	  		fakeData: ["Taipei", "Taipei City"],
+	  		fakeData: [ "Taipei", "Taipei City", "Taipei sucks" ],
+        defaultIndexResult: 0
 	  	}
 	  },
 	  computed: {
@@ -65,8 +80,34 @@
 	  methods: {
 	  	clearInput() {
 	  		this.inputValue = ''
-	  	}
-	  }
+	  	},
+      searchResult(e) {
+        if(this.hasInput) {
+          this.arrowSelectResult(e.keyCode)
+        }
+        console.log('send API request')
+      },
+      arrowSelectResult(arrowDirection) {
+        let self = this
+        switch(arrowDirection) {
+          case 38:
+            self.defaultIndexResult = self.defaultIndexResult - 1
+            if(self.defaultIndexResult < 0) {
+              self.defaultIndexResult = self.fakeData.length - 1
+            }
+            self.inputValue = self.fakeData[self.defaultIndexResult]
+            break;
+          case 40: 
+            self.defaultIndexResult = self.defaultIndexResult + 1
+            if(self.defaultIndexResult >= self.fakeData.length) {
+              self.defaultIndexResult = 0
+            }
+            this.inputValue = this.fakeData[this.defaultIndexResult]
+            break;
+        }
+      }
+	  },
+
 	}
 </script>
 
