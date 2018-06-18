@@ -5,7 +5,7 @@
 			<div>
 				<ul role="menu" id="headerNavUserMenu" aria-labelledby="headerNavUserButton" class="dropdown-ul">
 					 <li role="none presentation">
-				    <a href="/users/edit" role="menuitem" class="dropdown-item-wrap" >
+				    <nuxt-link to="/editPage" role="menuitem" class="dropdown-item-wrap" >
 				      <div class="dropdown-item-cotent">
 				        <div class="_2930ex">
 				          <div class="wt-vertical-center">
@@ -15,7 +15,7 @@
 				          </div>
 				        </div>
 				      </div>
-				    </a>
+				    </nuxt-link>
 				  </li>
 				</ul>
 			</div>

@@ -17,7 +17,6 @@ module.exports = {
     ]
   },
   css: [
-    '~/assets/main.css',
     '~/assets/bootstrap-grid.css'
   ],
   render: {

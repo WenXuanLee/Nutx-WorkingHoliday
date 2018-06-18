@@ -46,12 +46,11 @@
     },
     computed: {
       isShowListBox() {
-        return this._uid == this.setShowListBox.uid && this.setShowListBox && this.hasListBox
+        return this.setShowListBox && this.hasListBox
       }
     },
     methods: {
       showListBox(show) {
-        this.setShowListBox.uid = this._uid
         this.setShowListBox = !this.setShowListBox
       }
     },

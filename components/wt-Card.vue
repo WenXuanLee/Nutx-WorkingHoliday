@@ -6,7 +6,7 @@
         <div aria-hidden="true" class="wt-relative">
           <div class="item-img-round item-img-cover">
             <div class="item-img-display">
-              <a href="#hostUrl" target="_self" aria-hidden="true" tabindex="-1">
+              <nuxt-link :to="`/host/${ hostId }`">
                 <div class="item-img-overflow">
                   <div class="item-img-nowrap">
                     <div class="item-img-center">
@@ -16,14 +16,14 @@
                     </div>
                   </div>
                 </div>
-              </a>
+              </nuxt-link>
             </div>
           </div>
         </div>
       </div>
       <div class="item-intro">
         <div>
-          <a :href="hostUrl" target="_self" rel="noopener" class="item-intro-block">
+          <nuxt-link :to="`/host/${ hostId }`">
             <div>
               <div class="item-intro-spec" style="color: rgb(52, 30, 19);">
                 <div class="item-intro-spec-overflow" style="color: rgb(52, 30, 19);">
@@ -104,7 +104,7 @@
                   </span>
                 </div>
               </div>
-            </a>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -115,7 +115,7 @@
 <script>
 
 export default {
-	props: ['hostUrl', 'hostName', 'hostLocation', 'imgUrl', ]
+	props: ['hostId', 'hostName', 'hostLocation', 'imgUrl', ]
 }	
 </script>
 

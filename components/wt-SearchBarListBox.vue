@@ -5,7 +5,7 @@
     <li v-for="(item, index) in listItem" 
       :key="index"
       aria-selected="true" 
-      :class="['item-block', {'item-block-focus': item == selectedInput}]" 
+      :class="['item-block', {'item-block-focus': index == selectedFocus}]" 
       @click.prevent="sendQuery(item)"
       role="option" 
       tabindex="-1">
@@ -37,6 +37,10 @@
       selectedInput: {
         type: String,
         default: ''
+      },
+      selectedFocus: {
+        type: Number,
+        default: 0
       }
     },
     methods: {

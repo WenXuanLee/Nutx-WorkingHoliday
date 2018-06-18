@@ -1,15 +1,5 @@
 <template>
 <div>
-  <wt-header>
-      <a slot="wt-icon" href="/?logo=1" class="wt-table-cell" aria-label="Working Holiday Home Page">
-        <div class="wt-icon-wrap">
-          <i class="fas fa-camera-retro" style="color: red"></i>
-        </div>
-      </a>
-      <wt-search-bar slot="wt-search"></wt-search-bar>
-      <wt-nav slot="wt-navlinks"></wt-nav>
-  </wt-header>
-
   <main id="app" class="main-wrap">
     <div>
       <div class="main-content">
@@ -31,7 +21,7 @@
                     <wt-card 
                       v-for="(host, index) in caseList"
                       :key="index"
-                      :hostUrl="host.hostUrl"
+                      :hostId="host.id"
                       :hostName="host.hostName"
                       :hostLocation="host.hostLocation"
                       :imgUrl="host.imgUrl"/>
@@ -56,53 +46,54 @@
 </template>
 
 <script>
-import wtHeader from '@/components/wt-Header.vue'
-import wtSearchBar from '@/components/wt-SearchBar.vue'
+
 import wtCard from '@/components/wt-Card.vue'
-import wtNav from '@/components/wt-Nav.vue'
+
 
 export default {
-  data() {
-    return {
-      caseList: [
-        {
-          hostUrl: 'www.google.com',
-          imgUrl: 'https://img.freepik.com/free-photo/blue-mountains-famous-tourism-scenery-lijiang_1417-1143.jpg?size=338&ext=jpg',
-          hostName: '旅居',
-          hostLocation: '台北'
-        },
-        {
-          hostUrl: 'www.google.com',
-          imgUrl: 'https://images.pexels.com/photos/490411/pexels-photo-490411.jpeg?auto=compress&cs=tinysrgb&h=350',
-          hostName: '旅人',
-          hostLocation: '屏東'
-        },
-        {
-          hostUrl: 'www.google.com',
-          imgUrl: 'https://images.pexels.com/photos/490411/pexels-photo-490411.jpeg?auto=compress&cs=tinysrgb&h=350',
-          hostName: '旅人',
-          hostLocation: '屏東'
-        },
-        {
-          hostUrl: 'www.google.com',
-          imgUrl: 'https://images.pexels.com/photos/490411/pexels-photo-490411.jpeg?auto=compress&cs=tinysrgb&h=350',
-          hostName: '旅人',
-          hostLocation: '屏東'
-        },
-        {
-          hostUrl: 'www.google.com',
-          imgUrl: 'https://images.pexels.com/photos/490411/pexels-photo-490411.jpeg?auto=compress&cs=tinysrgb&h=350',
-          hostName: '旅人',
-          hostLocation: '屏東'
-        }
-      ]
-    }
-  },
   components: {
     wtCard,
-    wtHeader,
-    wtSearchBar,
-    wtNav
+  },
+  asyncData() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // resolve後的data會被nuxt自動merge到data裡面，此應為放入API request
+        resolve({
+          caseList: [
+            {
+              id: 1,
+              imgUrl: 'https://img.freepik.com/free-photo/blue-mountains-famous-tourism-scenery-lijiang_1417-1143.jpg?size=338&ext=jpg',
+              hostName: '旅居',
+              hostLocation: '台北'
+            },
+            {
+              id: 2,
+              imgUrl: 'https://images.pexels.com/photos/490411/pexels-photo-490411.jpeg?auto=compress&cs=tinysrgb&h=350',
+              hostName: '旅人',
+              hostLocation: '台中'
+            },
+            {
+              id: 3,
+              imgUrl: 'https://images.pexels.com/photos/490411/pexels-photo-490411.jpeg?auto=compress&cs=tinysrgb&h=350',
+              hostName: '旅人',
+              hostLocation: '高雄'
+            },
+            {
+              id: 4,
+              imgUrl: 'https://images.pexels.com/photos/490411/pexels-photo-490411.jpeg?auto=compress&cs=tinysrgb&h=350',
+              hostName: '旅人',
+              hostLocation: '屏東'
+            },
+            {
+              id: 5,
+              imgUrl: 'https://images.pexels.com/photos/490411/pexels-photo-490411.jpeg?auto=compress&cs=tinysrgb&h=350',
+              hostName: '旅人',
+              hostLocation: '蘭嶼'
+            }
+          ]          
+        }, 15000)
+      })
+    })
   }
 }
 </script>

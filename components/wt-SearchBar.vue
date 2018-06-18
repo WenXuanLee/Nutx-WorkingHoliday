@@ -44,6 +44,7 @@
 					</div>
 					<wt-search-bar-list-box 
             v-if="hasInput" 
+            :selected-focus="defaultIndexResult"
             :list-item="fakeData"
             :selected-input="inputValue"></wt-search-bar-list-box>
 		    </div>				
