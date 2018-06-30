@@ -7,13 +7,14 @@
 				<the-host-gallery />
 
 				<!-- hostPage下方content -->
-				<div></div>
+				<the-host-content />
 			</div>
 		</section>
 	</main>
 </template>
 <script>
 	import TheHostGallery from '@/components/TheHostPage/TheHostGallery.vue'
+	import TheHostContent from '@/components/TheHostPage/TheHostContent.vue'
 	export default {	
 		// prtend to send API request
 	  asyncData() {
@@ -28,6 +29,7 @@
 	  },
 	  components: {
 	  	TheHostGallery,
+	  	TheHostContent
 	  }
 	}
 </script>
