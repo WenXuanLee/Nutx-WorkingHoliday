@@ -17,7 +17,9 @@ module.exports = {
     ]
   },
   css: [
-    '~/assets/bootstrap-grid.css'
+    '~/assets/bootstrap-grid.css',
+    '~/assets/typology.css',
+    '~/assets/main.css',
   ],
   render: {
     bundleRenderer: {

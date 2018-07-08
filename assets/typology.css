@@ -1,0 +1,11 @@
+.text-wrap {
+  word-wrap: break-word;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+    color: #767676;
+}
