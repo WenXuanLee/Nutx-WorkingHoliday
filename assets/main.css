@@ -107,6 +107,10 @@ div {
   width: 100% !important;
 }
 
+.wt-table-no-width {
+  display: table !important;
+}
+
 .wt-block {
   display: block !important;
   width: 100% !important;
@@ -133,6 +137,10 @@ div {
 
 .wt-list-display-none {
   list-style-type: none !important;
+}
+
+.wt-text-break-word {
+  word-wrap: break-word !important;
 }
 
 .wt-text-subtitle {
@@ -184,7 +192,13 @@ div {
   padding-bottom: 2px !important;
   color: rgb(72, 72, 72) !important;
 }
+.show-sm {
+    display: none !important;
+}
 
+.sm-review-date-divider {
+  margin: 0 4px;
+}
 @media (min-width: 744px) {
   .main-wrap {
     padding-top: 80px !important;
@@ -241,4 +255,11 @@ div {
   .hide-sm {
     display: none !important;
   }
+  .show-sm {
+      display: block !important;
+  }
+  .text-center-sm {
+      text-align: center;
+  }
 }
+

@@ -20,6 +20,7 @@ module.exports = {
     '~/assets/bootstrap-grid.css',
     '~/assets/typology.css',
     '~/assets/main.css',
+    '~/assets/normalize.css',
   ],
   render: {
     bundleRenderer: {

@@ -1,3 +1,27 @@
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.1;
+  text-rendering: optimizelegibility;
+}
+
+h1, .h1 {
+  font-size: 44px;
+  font-weight: normal;
+}
+h5, .h5 {
+  font-size: 16px;
+  font-weight: bold;
+}
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 0;
+}
+
+.link-reset {
+  color: inherit;
+}
 .text-wrap {
   word-wrap: break-word;
 }
