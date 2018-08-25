@@ -124,6 +124,11 @@ div {
 .wt-mb {
   margin-bottom: 8px !important;
 }
+
+.wt-mt {
+  margin-top: 5vh !important;
+}
+
 .wt-relative {
   position: relative !important
 }

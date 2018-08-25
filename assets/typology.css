@@ -18,7 +18,9 @@ h5, .h5 {
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
   margin-top: 0;
 }
-
+.text-large {
+  font-size: 22px !important;
+}
 .link-reset {
   color: inherit;
 }
@@ -31,5 +33,18 @@ h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, 
 }
 
 .text-muted {
-    color: #767676;
+  color: #767676;
 }
+
+.text-bold-6 {
+  font-weight: 600 !important; 
+}
+
+.text-label {
+  font-size: 17px !important;
+  font-weight: 200 !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  padding-bottom: 4px !important;
+}
+
